@@ -1,0 +1,218 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<robot generator="Robot 7.2.2 (Python 3.13.2 on win32)" generated="2025-03-28T01:56:59.233307" rpa="false" schemaversion="5">
+<suite id="s1" name="loopTest" source="C:\Users\Aline Alves\OneDrive\Documentos\ROBOT-PROJECT\Step3\loopTest.robot">
+<test id="s1-t1" name="Cenário 01: Fazer Login" line="7">
+<for flavor="IN RANGE">
+<iter>
+<kw name="Realizar Login" owner="keywords">
+<kw name="Given que o usuário acessou o site" owner="keywords">
+<kw name="Open Browser" owner="SeleniumLibrary">
+<msg time="2025-03-28T01:56:59.469341" level="INFO">Opening browser 'chrome' to base url 'https://adopet-frontend-cypress.vercel.app/'.</msg>
+<arg>${URL_ADOPET}</arg>
+<arg>chrome</arg>
+<doc>Opens a new browser instance to the optional ``url``.</doc>
+<status status="PASS" start="2025-03-28T01:56:59.469101" elapsed="2.889871"/>
+</kw>
+<status status="PASS" start="2025-03-28T01:56:59.468796" elapsed="2.890457"/>
+</kw>
+<kw name="And acessou a tela de login" owner="keywords">
+<kw name="Scroll Element Into View" owner="SeleniumLibrary">
+<arg>//a[@data-test="login-button" and text()="Fazer login"]</arg>
+<doc>Scrolls the element identified by ``locator`` into view.</doc>
+<status status="PASS" start="2025-03-28T01:57:02.360422" elapsed="0.343165"/>
+</kw>
+<kw name="Sleep" owner="BuiltIn">
+<msg time="2025-03-28T01:57:04.704545" level="INFO">Slept 2 seconds.</msg>
+<arg>2s</arg>
+<doc>Pauses the test executed for the given time.</doc>
+<status status="PASS" start="2025-03-28T01:57:02.703862" elapsed="2.000947"/>
+</kw>
+<kw name="Wait Until Element Is Visible" owner="SeleniumLibrary">
+<arg>//a[@data-test="login-button" and text()="Fazer login"]</arg>
+<doc>Waits until the element ``locator`` is visible.</doc>
+<status status="PASS" start="2025-03-28T01:57:04.705176" elapsed="0.024571"/>
+</kw>
+<kw name="Click Link" owner="SeleniumLibrary">
+<msg time="2025-03-28T01:57:04.730110" level="INFO">Clicking link 'xpath=//a[@data-test="login-button" and text()="Fazer login"]'.</msg>
+<arg>xpath=//a[@data-test="login-button" and text()="Fazer login"]</arg>
+<doc>Clicks a link identified by ``locator``.</doc>
+<status status="PASS" start="2025-03-28T01:57:04.729925" elapsed="0.307459"/>
+</kw>
+<kw name="Sleep" owner="BuiltIn">
+<msg time="2025-03-28T01:57:07.039354" level="INFO">Slept 2 seconds.</msg>
+<arg>2s</arg>
+<doc>Pauses the test executed for the given time.</doc>
+<status status="PASS" start="2025-03-28T01:57:05.038649" elapsed="2.000964"/>
+</kw>
+<status status="PASS" start="2025-03-28T01:57:02.359980" elapsed="4.679879"/>
+</kw>
+<kw name="And inseriu o dado de EMAIL" owner="keywords">
+<kw name="Input Text" owner="SeleniumLibrary">
+<msg time="2025-03-28T01:57:07.041214" level="INFO">Typing text 'aline.teste@gmail.com' into text field '//input[@data-test='input-loginEmail']'.</msg>
+<arg>//input[@data-test='input-loginEmail']</arg>
+<arg>${EMAIL}</arg>
+<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
+<status status="PASS" start="2025-03-28T01:57:07.040811" elapsed="0.260278"/>
+</kw>
+<status status="PASS" start="2025-03-28T01:57:07.040280" elapsed="0.261125"/>
+</kw>
+<kw name="And inseriu o dado de senha" owner="keywords">
+<kw name="Input Text" owner="SeleniumLibrary">
+<msg time="2025-03-28T01:57:07.303058" level="INFO">Typing text 'A1234a' into text field '//input[@data-test='input-loginPassword']'.</msg>
+<arg>//input[@data-test='input-loginPassword']</arg>
+<arg>${PASSWORD}</arg>
+<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
+<status status="PASS" start="2025-03-28T01:57:07.302687" elapsed="0.127319"/>
+</kw>
+<status status="PASS" start="2025-03-28T01:57:07.301999" elapsed="0.128522"/>
+</kw>
+<kw name="And clica em entrar" owner="keywords">
+<kw name="Sleep" owner="BuiltIn">
+<msg time="2025-03-28T01:57:09.431851" level="INFO">Slept 2 seconds.</msg>
+<arg>2s</arg>
+<doc>Pauses the test executed for the given time.</doc>
+<status status="PASS" start="2025-03-28T01:57:07.431281" elapsed="2.000846"/>
+</kw>
+<kw name="Scroll Element Into View" owner="SeleniumLibrary">
+<arg>//button[@data-test='submit-button' and text()='Entrar']</arg>
+<doc>Scrolls the element identified by ``locator`` into view.</doc>
+<status status="PASS" start="2025-03-28T01:57:09.432445" elapsed="0.300895"/>
+</kw>
+<kw name="Click Element" owner="SeleniumLibrary">
+<msg time="2025-03-28T01:57:09.734063" level="INFO">Clicking element '//button[@data-test='submit-button' and text()='Entrar']'.</msg>
+<arg>//button[@data-test='submit-button' and text()='Entrar']</arg>
+<doc>Click the element identified by ``locator``.</doc>
+<status status="PASS" start="2025-03-28T01:57:09.733694" elapsed="0.080946"/>
+</kw>
+<status status="PASS" start="2025-03-28T01:57:07.430857" elapsed="2.383939"/>
+</kw>
+<kw name="And a tela home será exibida" owner="keywords">
+<kw name="Wait Until Element Is Visible" owner="SeleniumLibrary">
+<arg>${VERIFY}</arg>
+<doc>Waits until the element ``locator`` is visible.</doc>
+<status status="PASS" start="2025-03-28T01:57:09.815582" elapsed="0.019024"/>
+</kw>
+<status status="PASS" start="2025-03-28T01:57:09.815126" elapsed="0.019593"/>
+</kw>
+<status status="PASS" start="2025-03-28T01:56:59.468150" elapsed="10.366617"/>
+</kw>
+<var name="${i}">0</var>
+<status status="PASS" start="2025-03-28T01:56:59.467767" elapsed="10.367034"/>
+</iter>
+<iter>
+<kw name="Realizar Login" owner="keywords">
+<kw name="Given que o usuário acessou o site" owner="keywords">
+<kw name="Open Browser" owner="SeleniumLibrary">
+<msg time="2025-03-28T01:57:09.836138" level="INFO">Opening browser 'chrome' to base url 'https://adopet-frontend-cypress.vercel.app/'.</msg>
+<arg>${URL_ADOPET}</arg>
+<arg>chrome</arg>
+<doc>Opens a new browser instance to the optional ``url``.</doc>
+<status status="PASS" start="2025-03-28T01:57:09.835758" elapsed="3.451836"/>
+</kw>
+<status status="PASS" start="2025-03-28T01:57:09.835540" elapsed="3.452266"/>
+</kw>
+<kw name="And acessou a tela de login" owner="keywords">
+<kw name="Scroll Element Into View" owner="SeleniumLibrary">
+<arg>//a[@data-test="login-button" and text()="Fazer login"]</arg>
+<doc>Scrolls the element identified by ``locator`` into view.</doc>
+<status status="PASS" start="2025-03-28T01:57:13.289641" elapsed="0.312500"/>
+</kw>
+<kw name="Sleep" owner="BuiltIn">
+<msg time="2025-03-28T01:57:15.602851" level="INFO">Slept 2 seconds.</msg>
+<arg>2s</arg>
+<doc>Pauses the test executed for the given time.</doc>
+<status status="PASS" start="2025-03-28T01:57:13.602357" elapsed="2.000678"/>
+</kw>
+<kw name="Wait Until Element Is Visible" owner="SeleniumLibrary">
+<arg>//a[@data-test="login-button" and text()="Fazer login"]</arg>
+<doc>Waits until the element ``locator`` is visible.</doc>
+<status status="PASS" start="2025-03-28T01:57:15.603262" elapsed="0.019177"/>
+</kw>
+<kw name="Click Link" owner="SeleniumLibrary">
+<msg time="2025-03-28T01:57:15.622890" level="INFO">Clicking link 'xpath=//a[@data-test="login-button" and text()="Fazer login"]'.</msg>
+<arg>xpath=//a[@data-test="login-button" and text()="Fazer login"]</arg>
+<doc>Clicks a link identified by ``locator``.</doc>
+<status status="PASS" start="2025-03-28T01:57:15.622659" elapsed="0.254877"/>
+</kw>
+<kw name="Sleep" owner="BuiltIn">
+<msg time="2025-03-28T01:57:17.878400" level="INFO">Slept 2 seconds.</msg>
+<arg>2s</arg>
+<doc>Pauses the test executed for the given time.</doc>
+<status status="PASS" start="2025-03-28T01:57:15.877791" elapsed="2.000935"/>
+</kw>
+<status status="PASS" start="2025-03-28T01:57:13.288482" elapsed="4.590508"/>
+</kw>
+<kw name="And inseriu o dado de EMAIL" owner="keywords">
+<kw name="Input Text" owner="SeleniumLibrary">
+<msg time="2025-03-28T01:57:17.880597" level="INFO">Typing text 'aline.teste@gmail.com' into text field '//input[@data-test='input-loginEmail']'.</msg>
+<arg>//input[@data-test='input-loginEmail']</arg>
+<arg>${EMAIL}</arg>
+<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
+<status status="PASS" start="2025-03-28T01:57:17.880096" elapsed="0.170790"/>
+</kw>
+<status status="PASS" start="2025-03-28T01:57:17.879506" elapsed="0.171775"/>
+</kw>
+<kw name="And inseriu o dado de senha" owner="keywords">
+<kw name="Input Text" owner="SeleniumLibrary">
+<msg time="2025-03-28T01:57:18.052221" level="INFO">Typing text 'A1234a' into text field '//input[@data-test='input-loginPassword']'.</msg>
+<arg>//input[@data-test='input-loginPassword']</arg>
+<arg>${PASSWORD}</arg>
+<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
+<status status="PASS" start="2025-03-28T01:57:18.052022" elapsed="0.111351"/>
+</kw>
+<status status="PASS" start="2025-03-28T01:57:18.051680" elapsed="0.112044"/>
+</kw>
+<kw name="And clica em entrar" owner="keywords">
+<kw name="Sleep" owner="BuiltIn">
+<msg time="2025-03-28T01:57:20.165366" level="INFO">Slept 2 seconds.</msg>
+<arg>2s</arg>
+<doc>Pauses the test executed for the given time.</doc>
+<status status="PASS" start="2025-03-28T01:57:18.164726" elapsed="2.000799"/>
+</kw>
+<kw name="Scroll Element Into View" owner="SeleniumLibrary">
+<arg>//button[@data-test='submit-button' and text()='Entrar']</arg>
+<doc>Scrolls the element identified by ``locator`` into view.</doc>
+<status status="PASS" start="2025-03-28T01:57:20.165761" elapsed="0.306971"/>
+</kw>
+<kw name="Click Element" owner="SeleniumLibrary">
+<msg time="2025-03-28T01:57:20.473592" level="INFO">Clicking element '//button[@data-test='submit-button' and text()='Entrar']'.</msg>
+<arg>//button[@data-test='submit-button' and text()='Entrar']</arg>
+<doc>Click the element identified by ``locator``.</doc>
+<status status="PASS" start="2025-03-28T01:57:20.473190" elapsed="0.112951"/>
+</kw>
+<status status="PASS" start="2025-03-28T01:57:18.164399" elapsed="2.421881"/>
+</kw>
+<kw name="And a tela home será exibida" owner="keywords">
+<kw name="Wait Until Element Is Visible" owner="SeleniumLibrary">
+<arg>${VERIFY}</arg>
+<doc>Waits until the element ``locator`` is visible.</doc>
+<status status="PASS" start="2025-03-28T01:57:20.586765" elapsed="0.025154"/>
+</kw>
+<status status="PASS" start="2025-03-28T01:57:20.586473" elapsed="0.025556"/>
+</kw>
+<status status="PASS" start="2025-03-28T01:57:09.835179" elapsed="10.776894"/>
+</kw>
+<var name="${i}">1</var>
+<status status="PASS" start="2025-03-28T01:57:09.834950" elapsed="10.777158"/>
+</iter>
+<var>${i}</var>
+<value>${QUANTIDADE}</value>
+<status status="PASS" start="2025-03-28T01:56:59.467500" elapsed="21.144670"/>
+</for>
+<status status="PASS" start="2025-03-28T01:56:59.467122" elapsed="21.145606"/>
+</test>
+<status status="PASS" start="2025-03-28T01:56:59.236362" elapsed="21.376988"/>
+</suite>
+<statistics>
+<total>
+<stat pass="1" fail="0" skip="0">All Tests</stat>
+</total>
+<tag>
+</tag>
+<suite>
+<stat name="loopTest" id="s1" pass="1" fail="0" skip="0">loopTest</stat>
+</suite>
+</statistics>
+<errors>
+</errors>
+</robot>
