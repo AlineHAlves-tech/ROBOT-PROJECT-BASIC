@@ -1,11 +1,11 @@
 *** Settings ***
 
 Library    SeleniumLibrary
-Documentation    Suíte de Testes Gerais do Sistema
 Suite Setup    Abrir o site
 Suite Teardown    Fechar site
 
 *** Variables ***
+
 ${URL_ADOPET}    https://adopet-frontend-cypress.vercel.app/
 ${VERIFY}    //*[@id="root"]/main/section/p
 ${LOGIN_ADOPET}    https://adopet-frontend-cypress.vercel.app/login 
@@ -13,6 +13,7 @@ ${EMAIL}    aline.teste@gmail.com
 ${PASSWORD}    A1234a
 
 ${SCREENSHOT_DIR}    C:/Users/Aline Alves/OneDrive/Documentos/ROBOT-PROJECT/screenshots
+
 
 *** Keywords ***
 Desativar Screenshots
@@ -50,36 +51,12 @@ Verificar cadastro
     Sleep    5s
     Element Should Be Visible    ${VERIFY}
 
-##Login
 
-Acessar página de login
-    Scroll Element Into View    //a[@data-test="login-button" and text()="Fazer login"]
-    Click Link    xpath=//a[@data-test="login-button" and text()="Fazer login"]
-    Sleep    2s
-
-Preencher formulário de Login
-    Wait Until Element Is Visible    //*[@id="root"]/main/section/form/label[1]
-    Input Text    //input[@data-test='input-loginEmail']    ${EMAIL}
-    Input Text    //input[@data-test='input-loginPassword']    ${PASSWORD}
-
-Entrar no sistema
-    Click Element    //button[@data-test='submit-button' and text()='Entrar']
-    Sleep    3s
-
-    
 *** Test Cases ***
 
 Cenário 01: Cadastro adopet
-    [Documentation]    O usuário deve poder se cadastrar no sistema
     Desativar Screenshots
     Clicar em Cadastrar
     Inserir dados de cadastro
     Enviar cadastro
     Verificar cadastro
-
-Cenário 02: Fazer Login adopet
-    [Documentation]    O usuário deve poder fazer login no sistema
-    Desativar Screenshots
-    Acessar página de login
-    Preencher formulário de Login
-    Entrar no sistema
